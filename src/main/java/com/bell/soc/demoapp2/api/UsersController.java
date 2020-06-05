@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @RequestMapping("api/v1/users")
 public class UsersController {
 
-    private final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
+    private final Logger logger = LoggerFactory.getLogger(UsersController.class);
 
     private static final String TEMPLATE = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
