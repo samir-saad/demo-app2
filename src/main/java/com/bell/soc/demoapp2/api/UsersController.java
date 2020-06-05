@@ -21,15 +21,7 @@ public class UsersController {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        // name = name.replace( '\n' ,  '_' ).replace( '\r' , '_' ).replace( '\t' , '_' );
-        logger.info("Greeting {}", name);
-        return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
-    }
-
-    @GetMapping ("/xyz")
-    @ResponseStatus(code = HttpStatus.OK)
-    public Greeting greeting2(@RequestParam(value = "name", defaultValue = "World") String name) {
-        // name = name.replace( '\n' ,  '_' ).replace( '\r' , '_' ).replace( '\t' , '_' );
+        name = name.replace( '\n' ,  '_' ).replace( '\r' , '_' ).replace( '\t' , '_' );
         logger.info("Greeting {}", name);
         return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
     }
