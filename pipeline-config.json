@@ -1,0 +1,31 @@
+{
+  "primaryConfigRepo": {
+    "branch": "develop"
+  },
+  "stages": [
+    {
+      "taskType": "CONTAINER_BUILD",
+      "platform": {
+        "clusterId": "ocp-dev",
+        "project": "pipeline-demo-dev"
+      }
+    },
+    {
+      "taskType": "DEPLOY_DEV",
+      "platform": {
+        "clusterId": "ocp-dev",
+        "project": "pipeline-demo-dev"
+      },
+      "testing": {
+        "enable": false
+      }
+    },
+    {
+      "taskType": "DEPLOY_TEST",
+      "platform": {
+        "clusterId": "ocp-test",
+        "project": "pipeline-demo-test"
+      }
+    }
+  ]
+}
