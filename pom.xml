@@ -4,7 +4,7 @@
 
     <groupId>com.bell.soc</groupId>
     <artifactId>demo-app2</artifactId>
-    <version>1.0.0-RC-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>demo-app2</name>
