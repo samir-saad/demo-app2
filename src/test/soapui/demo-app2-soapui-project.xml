@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ff5e7acd-f4fb-422a-90e1-1174101927d7" activeEnvironment="Default" name="Pipeline Demo App" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" defaultScriptLanguage="Groovy" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings>
+		<con:setting id="ProjectSettings@hermesConfig"/>
+	</con:settings>
+	<con:interface xsi:type="con:RestService" id="26b3fd11-f3b4-4fbc-9191-f89ac4923a97" wadlVersion="http://wadl.dev.java.net/2009/02" name="Hello" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:settings/>
+		<con:definitionCache type="TEXT" rootPart=""/>
+		<con:endpoints/>
+		<con:resource name="Hello" path="/api/v1/hello" id="7ec26d08-5c37-4e98-b1ac-f5bd2a7df1ac">
+			<con:settings/>
+			<con:parameters>
+				<con:parameter>
+					<con:name>name</con:name>
+					<con:style>QUERY</con:style>
+				</con:parameter>
+			</con:parameters>
+			<con:method name="Get Default" id="cc4d1c45-5cad-48e7-86aa-ce34145f953a" method="GET">
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="FAULT">
+					<con:mediaType>application/json;charset=UTF-8</con:mediaType>
+					<con:status>500 400 404 503</con:status>
+					<con:params/>
+				</con:representation>
+				<con:representation type="REQUEST">
+					<con:mediaType>application/json</con:mediaType>
+					<con:params/>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json;charset=UTF-8</con:mediaType>
+					<con:status>201 200</con:status>
+					<con:params/>
+					<con:element>Response</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html;charset=utf-8</con:mediaType>
+					<con:status>404</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true"/>
+					<con:status>0</con:status>
+					<con:params/>
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>504</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/xml;charset=utf-8</con:mediaType>
+					<con:status>500</con:status>
+					<con:params/>
+					<con:element xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">soapenv:Envelope</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true"/>
+					<con:status>0</con:status>
+					<con:params/>
+					<con:element>data</con:element>
+				</con:representation>
+				<con:representation type="RESPONSE">
+					<con:mediaType xsi:nil="true"/>
+					<con:status>0</con:status>
+					<con:params/>
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Get Request" id="eb8a2dda-7b12-4cc7-b254-ce8f168464c7" mediaType="application/json" postQueryString="false">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>${#Project#endpoint}</con:endpoint>
+					<con:request/><con:credentials>
+						<con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters/>
+					<con:parameterOrder>
+						<con:entry>name</con:entry>
+					</con:parameterOrder>
+				</con:request>
+				<con:request name="Get With Params" id="25ed1bd1-5a9f-4bc8-8118-d9209e9b4d49" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>${#Project#endpoint}</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<entry key="name" value="Samir" xmlns="http://eviware.com/soapui/config"/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>name</con:entry>
+					</con:parameterOrder>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="load" path="/api/v1/cpu/load" id="2a00a7f0-8286-4139-acdc-da461d66850b">
+			<con:settings/>
+			<con:parameters/>
+			<con:method name="Get Default" id="e5de5d46-dbc7-4881-8b4c-7c07ffcf0510" method="GET">
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="RESPONSE">
+					<con:mediaType>text/plain;charset=UTF-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element>data</con:element>
+				</con:representation>
+				<con:request name="Request 1" id="4a1c21a8-25fc-421a-9e7b-5ec60a9d6eca" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>${#Project#endpoint}</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:testSuite id="2b2f3cf7-0475-4a03-91cb-4a6f77ea39c6" name="TestSuite 1">
+		<con:settings/>
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="681098b8-a18b-46a9-8877-20992b55ffa3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+			<con:settings/>
+			<con:testStep type="restrequest" name="CPU Load" id="00394ae6-42fa-4901-a9cb-9bf1636f3c73">
+				<con:settings/>
+				<con:config service="Hello" resourcePath="/api/v1/cpu/load" methodName="Get Default" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="CPU Load" id="4a1c21a8-25fc-421a-9e7b-5ec60a9d6eca" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>${#Project#endpoint}</con:endpoint>
+						<con:request/>
+						<con:assertion type="Valid HTTP Status Codes" id="16ef5bd8-de74-4588-906d-4ca0d1d1d6c4" name="Valid HTTP Status Codes">
+							<con:configuration>
+								<codes>200</codes>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters/>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="restrequest" name="Hello Default" id="abb412b7-1632-4c26-9a19-0a8e148f4046">
+				<con:settings/>
+				<con:config service="Hello" resourcePath="/api/v1/hello" methodName="Get Default" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="Hello Default" id="eb8a2dda-7b12-4cc7-b254-ce8f168464c7" mediaType="application/json" postQueryString="false">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>${#Project#endpoint}</con:endpoint>
+						<con:request/><con:assertion type="Valid HTTP Status Codes" id="6e2143dd-5830-4080-b9ee-d9c8eff0a2ef" name="Valid HTTP Status Codes">
+							<con:configuration>
+								<codes>200</codes>
+							</con:configuration>
+						</con:assertion>
+						<con:assertion type="Simple Contains" id="7d0e4874-fae8-4b0b-98af-15aa8053bbf3" name="Contains">
+							<con:configuration>
+								<token>Hello, World!</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters/>
+						<con:parameterOrder>
+							<con:entry>name</con:entry>
+						</con:parameterOrder>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="restrequest" name="Hello With Params" id="70bab188-f437-42fa-983d-7305a6fb6f0c">
+				<con:settings/>
+				<con:config service="Hello" resourcePath="/api/v1/hello" methodName="Get Default" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="Hello With Params" id="25ed1bd1-5a9f-4bc8-8118-d9209e9b4d49" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>${#Project#endpoint}</con:endpoint>
+						<con:request/>
+						<con:assertion type="Valid HTTP Status Codes" id="1dbe1d57-1aaf-430d-9578-53f1c546adcc" name="Valid HTTP Status Codes">
+							<con:configuration>
+								<codes>200</codes>
+							</con:configuration>
+						</con:assertion>
+						<con:assertion type="Simple Contains" id="96c9add7-9f66-405f-9678-49667aaa8866" name="Contains">
+							<con:configuration>
+								<token>Hello, Samir!</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="name" value="Samir" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>name</con:entry>
+						</con:parameterOrder>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:loadTest id="668a51fc-c33c-4042-af23-11e6e4735f5f" name="LoadTest 1">
+				<con:settings>
+					<con:setting id="HttpSettings@close-connections">false</con:setting>
+				</con:settings>
+				<con:threadCount>10</con:threadCount>
+				<con:startDelay>0</con:startDelay>
+				<con:sampleInterval>250</con:sampleInterval>
+				<con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+				<con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+				<con:historyLimit>-1</con:historyLimit>
+				<con:testLimit>120</con:testLimit>
+				<con:limitType>TIME</con:limitType>
+				<con:loadStrategy>
+					<con:type>Simple</con:type>
+				</con:loadStrategy>
+				<con:assertion type="Step Status" name="Step Status"/>
+				<con:maxAssertionErrors>100</con:maxAssertionErrors>
+				<con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+				<con:strategyInterval>500</con:strategyInterval>
+			</con:loadTest>
+			<con:properties/>
+		</con:testCase>
+		<con:properties/>
+	<con:setupScript/></con:testSuite>
+	<con:properties>
+		<con:property>
+			<con:name>endpoint</con:name>
+			<con:value/>
+		</con:property>
+	</con:properties>
+	<con:afterLoadScript>def propertyFilePath = System.getProperty('soapui.properties')
+def propertiesFile = new File(propertyFilePath)
+def props = new Properties()
+
+try {
+	props.load(new FileInputStream(propertiesFile))
+	log.info("Test Execution using CommandLine / Jenkins")
+} catch (FileNotFoundException e) {
+	def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+	props.load(new FileInputStream(groovyUtils.projectPath + '\\local.properties'))
+	log.info("Test Execution using SoapUI GUI")
+}
+
+props.each { key, value -> 
+project.setPropertyValue(key, value)
+log.info 'Key :'+key+' Value : '+value
+}</con:afterLoadScript>
+	<con:wssContainer/>
+	<con:oAuth2ProfileContainer/>
+	<con:oAuth1ProfileContainer/>
+	<con:beforeRunScript>// Add Project Properties using External Properties File
+
+def propertyFilePath = System.getProperty('soapui.properties')
+def propertiesFile = new File(propertyFilePath)
+def props = new Properties()
+
+try {
+	props.load(new FileInputStream(propertiesFile))
+	log.info("Test Execution using CommandLine / Jenkins")
+} catch (FileNotFoundException e) {
+	def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+	props.load(new FileInputStream(groovyUtils.projectPath + '\\local.properties'))
+	log.info("Test Execution using SoapUI GUI")
+}
+
+props.each { key, value -> 
+project.setPropertyValue(key, value)
+log.info 'Key :'+key+' Value : '+value
+}</con:beforeRunScript>
+	<con:afterRunScript>// Add Project Properties using External Properties File
+
+def propertyFilePath = System.getProperty('soapui.properties')
+def propertiesFile = new File(propertyFilePath)
+def props = new Properties()
+
+try {
+	props.load(new FileInputStream(propertiesFile))
+	log.info("Test Execution using CommandLine / Jenkins")
+} catch (FileNotFoundException e) {
+	def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+	props.load(new FileInputStream(groovyUtils.projectPath + '\\local.properties'))
+	log.info("Test Execution using SoapUI GUI")
+}
+
+props.each { key, value -> 
+project.removeProperty(key)
+log.info 'Key :'+key+' Value : '+value
+}</con:afterRunScript>
+	<con:sensitiveInformation/>
+</con:soapui-project>
